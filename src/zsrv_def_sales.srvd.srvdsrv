@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for SALES'
+define service ZSRV_DEF_SALES {
+  expose zcds_sales as Sales;
+}

@@ -1,0 +1,31 @@
+managed implementation in class zbp_cds_sales unique;
+strict ( 2 );
+
+define behavior for zcds_sales alias Sales
+persistent table ztab_sales
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Salesdocument;
+
+  action ( features : instance ) Permission result[1] $self;
+
+    mapping for ztab_sales {
+    Salesdocument    = salesdocument;
+    OrderDate        = orderdate;
+    SalesAmount     = sales_amount;
+    SalesCurrency   = sales_currency;
+    Customer         = customer;
+    CustomerName    = customer_name;
+    Status           = status;
+    ispermitted      = ispermitted;
+
+
+
+  }
+
+}
